@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Case, Screen } from "./styles";
+import { ButtonsSection, Case, Screen, ScreenSection } from "./styles";
 import { PokemonI } from "../../api/interface";
 import Card from "../../components/card";
 import DirectionButtons from "./DirectionButtons";
 import Pokemon from "../pokemon";
+import Button from "../../components/buttons";
 interface IPokedeProps {
   pokemons: PokemonI[];
 }
@@ -16,7 +17,14 @@ export default function Pokedex({ pokemons }: IPokedeProps) {
     setCurrentPokemon(pokemon);
   };
 
- 
+  const back = () => {
+    setCurrentPokemon(undefined);
+  };
+
+  const next = () => {
+    setCurrentPokemon(undefined);
+  };
+
   const renderPokemons = () => {
     return pokemons.map((pokemon) => (
       <Card
@@ -35,8 +43,20 @@ export default function Pokedex({ pokemons }: IPokedeProps) {
 
   return (
     <Case>
-      <Screen>{currentPokemon ? <Pokemon current={currentPokemon}/> : renderPokemons()}</Screen>
-      <DirectionButtons />
+      <ScreenSection>
+        <Screen>
+          {currentPokemon ? (
+            <Pokemon current={currentPokemon} />
+          ) : (
+            renderPokemons()
+          )}
+        </Screen>
+        <DirectionButtons />
+      </ScreenSection>
+      <ButtonsSection>
+        <Button onClick={back}>Back</Button>
+        <Button onClick={() => {}}>Ok</Button>
+      </ButtonsSection>
     </Case>
   );
 }

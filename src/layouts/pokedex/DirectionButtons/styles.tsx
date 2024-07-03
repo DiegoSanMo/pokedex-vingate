@@ -21,7 +21,8 @@ export const DirectionButton = styled.button<{
   $position: "top" | "bottom" | "left" | "right";
 }>`
   background-color: black;
-  border: none;
+  /* border: none; */
+  border: .4px solid #808080;
   border-radius: 10px;
   display: inline-flex;
   padding: 10px;
