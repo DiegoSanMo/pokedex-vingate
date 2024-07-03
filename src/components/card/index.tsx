@@ -1,10 +1,10 @@
 import { ICardProps } from "./interface";
-import { CardContainer, TitleStyled } from "./styles";
+import { CardContainer } from "./styles";
 
-const Card = ({ title, children, actions }: ICardProps) => {
+const Card = ({ title, children, actions, onClick }: ICardProps) => {
   return (
-    <CardContainer >
-      <TitleStyled>{title}</TitleStyled>
+    <CardContainer onClick={onClick}>
+      <h4>{title}</h4>
       {children && children}
       {actions && actions}
     </CardContainer>

@@ -1,23 +1,23 @@
 import styled from "styled-components";
 
-export const HomeContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 550px;
-  overflow: scroll;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #dcdfdf;
-`;
+export const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+`
 
 export const ButtonContainer = styled.div`
   background: blue;
-  height: 400px;
+  height: 200px;
+  position: absolute;
+  bottom: 0vh;
+  left: 100vh;
   display: flex;
-  align-self: end;
-  clip-path: circle(70% at 0 70%);
+ 
 `;
+
+
+export const Joystrick = styled.div`
+  
+`
