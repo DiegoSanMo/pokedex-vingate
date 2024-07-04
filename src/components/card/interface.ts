@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 
-export interface ICardProps{
-    children?: ReactNode;
-    actions?: ReactNode;
-    onClick?: () => void;
+export interface ICardProps {
+  children?: ReactNode;
+  actions?: ReactNode;
+  onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }

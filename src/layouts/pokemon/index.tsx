@@ -9,6 +9,7 @@ export const Pokemon = ({current}: PokemonProps) => {
     const { sprites, cries} = current;
     const { front_default } = sprites;
     const audio = new Audio(cries.latest);
+    
     audio.play();
     const { name } = current;
 
