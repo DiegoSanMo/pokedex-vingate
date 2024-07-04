@@ -11,7 +11,7 @@ export interface IPokemonSpecies {
   }
 
 
-  export interface Pokemon {
+  export interface PokemonI {
     abilities:                Ability[];
     base_experience:          number;
     cries:                    Cries;
