@@ -18,6 +18,11 @@ export default function Home() {
   }, []);
 
 
+  const changeColorHandler = (color: string) => {
+
+  }
+
+
   return (
     <Container>
       <Pokedex pokemons={pokemons}/>
