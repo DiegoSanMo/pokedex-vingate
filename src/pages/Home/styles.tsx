@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  padding: 0;
+  padding: 10px;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 `
 
 export const ButtonContainer = styled.div`

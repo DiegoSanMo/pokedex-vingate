@@ -1,8 +1,15 @@
-import { ButtonStyled } from "./styles";
+import { ReactNode } from "react";
+import { ButtonStyled, Variant } from "./styles";
 
-export const Button = (props) => {
+interface ButtonProps {
+    onClick: any;
+    type: Variant;
+    children: ReactNode
+}
 
-    return <ButtonStyled onClick={props.onClick}>{props.children}</ButtonStyled>
+export const Button = ({onClick, type, children}: ButtonProps) => {
+
+    return <ButtonStyled $type={type} onClick={onClick}>{children}</ButtonStyled>
 }
 
 export default Button;

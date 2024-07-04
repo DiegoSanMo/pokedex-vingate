@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ButtonsSection, Case, Screen, ScreenSection } from "./styles";
+import { ButtonContainer, ButtonsSection, Case, Screen } from "./styles";
 import { PokemonI } from "../../api/interface";
 import Card from "../../components/card";
 import DirectionButtons from "./DirectionButtons";
@@ -32,6 +32,7 @@ export default function Pokedex({ pokemons }: IPokedeProps) {
   };
 
   const back = () => {
+    
     setCurrentPokemon(undefined);
   };
 
@@ -48,7 +49,7 @@ export default function Pokedex({ pokemons }: IPokedeProps) {
         onClick={() => selectPokemonHandler(pokemon)}
       >
         <img
-          style={{ height: "200px" }}
+          style={{ height: "100px" }}
           src={pokemon.sprites.front_default}
           alt=""
         />
@@ -58,20 +59,34 @@ export default function Pokedex({ pokemons }: IPokedeProps) {
 
   return (
     <Case>
-      <ScreenSection>
-        <Screen>
-          {currentPokemon ? (
-            <Pokemon current={currentPokemon} />
-          ) : (
-            renderPokemons()
-          )}
-        </Screen>
+      <Screen>
+        {currentPokemon ? (
+          <Pokemon current={currentPokemon} />
+        ) : (
+          renderPokemons()
+        )}
+      </Screen>
+      <ButtonContainer>
         <DirectionButtons />
-      </ScreenSection>
-      <ButtonsSection>
-        <Button onClick={back}>Back</Button>
-        <Button onClick={() => {}}>Ok</Button>
-      </ButtonsSection>
+        <ButtonsSection>
+          <Button type="circle" onClick={back}>
+            B
+          </Button>
+          <Button type="circle" onClick={() => {}}>
+            A
+          </Button>
+        </ButtonsSection>
+      </ButtonContainer>
+      <ButtonContainer>
+        <ButtonsSection>
+          <Button type="normal" onClick={back}>
+            B
+          </Button>
+          <Button type="normal" onClick={() => {}}>
+            A
+          </Button>
+        </ButtonsSection>
+      </ButtonContainer>
     </Case>
   );
 }
