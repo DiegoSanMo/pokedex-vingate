@@ -1,10 +1,9 @@
 import { ICardProps } from "./interface";
-import { CardContainer, TitleStyled } from "./styles";
+import { CardContainer } from "./styles";
 
-const Card = ({ title, children, actions }: ICardProps) => {
+const Card = ({ children, actions, onClick,  onMouseEnter, onMouseLeave, ...props}: ICardProps) => {
   return (
-    <CardContainer >
-      <TitleStyled>{title}</TitleStyled>
+    <CardContainer onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} {...props}>
       {children && children}
       {actions && actions}
     </CardContainer>

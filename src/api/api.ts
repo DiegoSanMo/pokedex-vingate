@@ -1,7 +1,7 @@
 import axios from "axios";
-import { IPokemonSpecies, ISpeciesResult, Pokemon } from "./interface";
+import { ISpeciesResult, PokemonI } from "./interface";
 
-export async function fetchPokedex(): Promise<Pokemon[] | undefined> {
+export async function fetchPokedex(): Promise<PokemonI[] | undefined> {
   try {
     const response = await axios.get(
       "https://pokeapi.co/api/v2/pokemon-species/"
